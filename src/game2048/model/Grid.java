@@ -94,24 +94,9 @@ public class Grid {
 
     public void getMinTiles()
     {
-        int iVal;
-        int iCalc;
-        int iInc;
+        int iTab[] = initMinTiles();
 
-        if (vertical)
-        {
-            iVal = statsLine * (int)Math.sqrt(Size);
-            iCalc = (statsLine+1) *(int)Math.sqrt(Size);
-            iInc = 1;
-        }
-        else
-        {
-            iVal = statsLine;
-            iCalc = Size - ((int) Math.sqrt(Size) - statsLine) + 1;
-            iInc = (int) Math.sqrt(Size);
-        }
-
-        for ( int i = iVal; i < iCalc; i = i + iInc)
+        for ( int i = iTab[0]; i < iTab[1]; i = i + iTab[2])
         {
             LineTiles.add(Tiles.get(i));
 
@@ -120,10 +105,29 @@ public class Grid {
 
     public void setMinTiles()
     {
+        int iTab[] = initMinTiles();
+
+        int iSet = 0;
+
+        for ( Tile t : LineTiles)
+        {
+            TilesPoints.add(t.GetPoints());
+        }
+
+        for ( int i = iTab[0]; i < iTab[1]; i = i + iTab[2])
+        {
+            Tiles.get(i).SetPoints(TilesPoints.get(iSet));
+
+            iSet++;
+        }
+    }
+
+    public int[] initMinTiles()
+    {
+        int iTab[] = {0,0,0};
         int iVal;
         int iCalc;
         int iInc;
-        int iSet = 0;
 
         if (vertical)
         {
@@ -137,19 +141,12 @@ public class Grid {
             iCalc = Size - ((int) Math.sqrt(Size) - statsLine) + 1;
             iInc = (int) Math.sqrt(Size);
         }
-        for ( Tile t : LineTiles)
-        {
-            TilesPoints.add(t.GetPoints());
-        }
 
-        for ( int i = iVal; i < iCalc; i = i + iInc)
-        {
-            Tiles.get(i).SetPoints(TilesPoints.get(iSet));
-
-            iSet++;
-        }
+        iTab[0] = iVal;
+        iTab[1] = iCalc;
+        iTab[2] = iInc;
+        return iTab;
     }
-
     public void initLine(int statsLine, boolean vertical )
     {
         this.vertical = vertical;

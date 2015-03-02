@@ -111,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Grid.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Grid.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game2048/model/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="3009">
-              <caret line="170" column="21" selection-start-line="170" selection-start-column="21" selection-end-line="170" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.092016235" vertical-offset="1717" max-vertical-offset="2958">
+              <caret line="126" column="27" selection-start-line="126" selection-start-column="27" selection-end-line="126" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,10 +123,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MetaGame.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MetaGame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game2048/model/MetaGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.7483085" vertical-offset="1326" max-vertical-offset="3893">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1879" max-vertical-offset="3893">
               <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="e#3135#3136#0" expanded="true" />
@@ -195,7 +195,6 @@
         <option value="$PROJECT_DIR$/src/game2048/model/Tile.java" />
         <option value="$PROJECT_DIR$/src/game2048/controler/Game.java" />
         <option value="$PROJECT_DIR$/src/game2048/model/AbstractMetaGame.java" />
-        <option value="$PROJECT_DIR$/src/game2048/model/Grid.java" />
         <option value="$PROJECT_DIR$/src/game2048/model/Line.java" />
         <option value="$PROJECT_DIR$/src/game2048/model/Save.java" />
         <option value="$PROJECT_DIR$/src/game2048/model/Score.java" />
@@ -205,6 +204,7 @@
         <option value="$PROJECT_DIR$/src/game2048/Main.java" />
         <option value="$PROJECT_DIR$/src/game2048/viewer/Draw.java" />
         <option value="$PROJECT_DIR$/src/game2048/model/MetaGame.java" />
+        <option value="$PROJECT_DIR$/src/game2048/model/Grid.java" />
       </list>
     </option>
   </component>
@@ -753,16 +753,16 @@
       <workItem from="1425287272313" duration="8673000" />
       <workItem from="1425309659679" duration="2317000" />
       <workItem from="1425314556249" duration="665000" />
-      <workItem from="1425315251213" duration="1553000" />
+      <workItem from="1425315251213" duration="2628000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126098000" />
+    <option name="totallyTimeSpent" value="127173000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -775,7 +775,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19092827" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19092827" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1266,16 +1266,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/game2048/model/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="3009">
-          <caret line="170" column="21" selection-start-line="170" selection-start-column="21" selection-end-line="170" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/game2048/viewer/Draw.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4981">
@@ -1292,7 +1282,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game2048/model/MetaGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7483085" vertical-offset="1326" max-vertical-offset="3893">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1879" max-vertical-offset="3893">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="e#3135#3136#0" expanded="true" />
@@ -1302,6 +1292,16 @@
             <element signature="e#4782#4783#0" expanded="true" />
             <element signature="e#4828#4829#0" expanded="true" />
             <element signature="e#4867#4868#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game2048/model/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.092016235" vertical-offset="1717" max-vertical-offset="2958">
+          <caret line="126" column="27" selection-start-line="126" selection-start-column="27" selection-end-line="126" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
