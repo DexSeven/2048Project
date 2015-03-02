@@ -1,13 +1,11 @@
 package game2048.model;
 
-import com.sun.org.apache.bcel.internal.classfile.Constant;
 
 import java.io.*;
-import java.util.LinkedList;
-import java.util.List;
+
 
 /**
- * Created by Steph on 14/02/2015.
+ * Created by DexSeven
  */
 public class Save {
 

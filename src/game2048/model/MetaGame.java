@@ -4,8 +4,7 @@ package game2048.model;
 import java.util.*;
 
 /**
- * Created by Steph on 14/02/2015.
- * MODEL
+ * Created by DexSeven
  */
 public class MetaGame extends AbstractMetaGame {
 

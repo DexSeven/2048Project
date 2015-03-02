@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import game2048.observer.Observable;
 import game2048.observer.Observer;
 /**
- * Created by Steph on 18/02/2015.
+ * Created by DexSeven
  */
 public abstract class AbstractMetaGame implements Observable{
 

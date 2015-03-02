@@ -5,6 +5,11 @@ import game2048.controler.Game;
 import game2048.model.MetaGame;
 import game2048.viewer.Draw;
 
+/**
+ * Created by DexSeven
+ * 2048 WIP
+ */
+
 public class Main {
 
     public static void main(String[] args) {

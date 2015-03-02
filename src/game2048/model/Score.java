@@ -3,7 +3,7 @@ package game2048.model;
 import java.io.Serializable;
 
 /**
- * Created by Steph on 23/02/2015.
+ * Created by DexSeven
  */
 public class Score implements Serializable{
 

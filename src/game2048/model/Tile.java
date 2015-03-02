@@ -1,7 +1,7 @@
 package game2048.model;
 
 /**
- * Created by Steph on 14/02/2015.
+ * Created by DexSeven
  */
 public class Tile {
 

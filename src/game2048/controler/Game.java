@@ -2,12 +2,8 @@ package game2048.controler;
 
 import game2048.model.MetaGame;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-
 /**
- * Created by Steph on 14/02/2015.
- * CONTROLER
+ * Created by DexSeven
  */
 public class Game {
 

@@ -1,7 +1,7 @@
 package game2048.observer;
 
 /**
- * Created by Steph on 18/02/2015.
+ * Created by DexSeven
  */
 
 

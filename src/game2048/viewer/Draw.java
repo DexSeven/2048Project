@@ -13,9 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Steph on 14/02/2015.
- * VIEWER
- *
+ * Created by DexSeven
  */
 public class Draw extends AbstractDraw implements Observer{
 

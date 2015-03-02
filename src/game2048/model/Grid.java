@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Steph on 23/02/2015.
+ * Created by DexSeven
  */
 public class Grid {
 

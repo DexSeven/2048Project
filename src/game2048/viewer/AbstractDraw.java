@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 /**
- * Created by Steph on 24/02/2015.
+ * Created by DexSeven
  */
 public class AbstractDraw extends JFrame implements KeyListener{
 
