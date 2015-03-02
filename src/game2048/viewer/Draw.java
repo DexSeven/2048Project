@@ -20,6 +20,7 @@ import java.util.List;
 public class Draw extends AbstractDraw implements Observer{
 
     static JButton bouton;
+    static JLabel status;
     public boolean Process = false;
     static List<JLabel> JTiles;
     static List<JLabel> JScore;
@@ -101,12 +102,19 @@ public class Draw extends AbstractDraw implements Observer{
             i++;
         }
 
+
         panEcran.setBorder(BorderFactory.createLineBorder(Color.black));
         panEcran.setBackground(Color.GRAY);
 
         bouton = new JButton("Restart");
         bouton.addActionListener(new TestLis());
 
+        status = new JLabel(" ");
+        status.setPreferredSize(new Dimension(80, 30));
+        status.setFont(police);
+        status.setForeground(new Color(100, 69, 28));
+
+        pan2Ecran.add(status);
         pan2Ecran.add(bouton,BorderLayout.EAST);
         container.add(pan2Ecran,BorderLayout.NORTH);
         container.add(panEcran,BorderLayout.SOUTH);
@@ -189,7 +197,6 @@ public class Draw extends AbstractDraw implements Observer{
 
             public void done()
             {
-                //System.out.print(score);
                 if ( bol)
                 {
                     JScore.get(1).setText(String.valueOf(score));
@@ -225,18 +232,49 @@ public class Draw extends AbstractDraw implements Observer{
         sw.execute();
     }
 
-    public void update(Boolean bol)
-    {
-        if (bol)
-        {
-            System.out.print("Win");
-        }
-        else
-        {
-            System.out.print("Game Over");
-            stop = true;
-        }
+    public void update(final boolean bol) {
 
+        Process = true;
+        SwingWorker sw = new SwingWorker(){
+            protected Object doInBackground() throws Exception {
+                for(int i = 0; i < 10 ; i++){
+                    try {
+                        setProgress(i);
+                        Thread.sleep(30);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                return null;
+            }
+
+            public void done()
+            {
+                Process = false;
+                container.setFocusable(true);
+                container.requestFocus();
+            }
+        };
+
+        sw.addPropertyChangeListener(new PropertyChangeListener()
+        {
+            public void propertyChange(PropertyChangeEvent event)
+            {
+                if("progress".equals(event.getPropertyName()))
+                {
+                    if ( bol)
+                    {
+                        status.setText("WIN");
+                    }
+                    else
+                    {
+                        status.setText("LOOSE");
+                        stop = true;
+                    }
+                }
+            }
+        });
+        sw.execute();
     }
 
     class TestLis implements ActionListener {
@@ -248,6 +286,8 @@ public class Draw extends AbstractDraw implements Observer{
                Game.Init();
                oldScoreMain = 0;
                stop = false;
+               status.setText(" ");
+
            }
             container.setFocusable(true);
             container.requestFocus();
