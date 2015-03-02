@@ -256,7 +256,7 @@ public class Draw extends AbstractDraw implements Observer{
             {
                 if("progress".equals(event.getPropertyName()))
                 {
-                    if ( bol)
+                    if (bol)
                     {
                         status.setText("WIN");
                     }

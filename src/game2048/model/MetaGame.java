@@ -16,13 +16,14 @@ public class MetaGame extends AbstractMetaGame {
     List<Thread> Lines;
     int StatusSens = 0; // 0 Right , 1 Bottom , 2 Left and 3 Top
     boolean firstLaunch;
+    int oldAddTile;
 
     public MetaGame()
     {
         firstLaunch = true;
         Score = new Score();
         Save = new Save(Score);
-
+        oldAddTile = -1;
         Init(false);
     }
 
@@ -165,10 +166,20 @@ public class MetaGame extends AbstractMetaGame {
         }
         if ( !ListI.isEmpty())
         {
-            Random r = new Random();
-            if ( ListI.size() != 1 )  rdm = r.nextInt(ListI.size()-1);
+            if ( ListI.size() > 1 )
+            {
+                do
+                {
+                    Random r = new Random();
+                    rdm = r.nextInt(ListI.size()-1);
+
+                }while(oldAddTile == Grid.GetTiles().get(ListI.get(rdm)).GetPosition());
+                oldAddTile = Grid.GetTiles().get(ListI.get(rdm)).GetPosition();
+            }
+            oldAddTile = -1;
             Grid.GetTiles().get(ListI.get(rdm)).SetPoints(2);
             notifyGridAdd(ListI.get(rdm));
+
         }
     }
 
