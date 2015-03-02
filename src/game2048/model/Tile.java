@@ -38,6 +38,4 @@ public class Tile {
     {
         this.Points = 0;
     }
-
-
 }

@@ -19,14 +19,14 @@ import java.util.List;
  */
 public class Draw extends AbstractDraw implements Observer{
 
+
     static JButton bouton;
     static JLabel status;
-    public boolean Process = false;
     static List<JLabel> JTiles;
     static List<JLabel> JScore;
     private JPanel container;
     int oldScoreMain;
-
+    public boolean Process = false;
 
     public Draw(Game Game)
     {
@@ -52,7 +52,7 @@ public class Draw extends AbstractDraw implements Observer{
         pan2Ecran.setPreferredSize(new Dimension(350, 100));
 
 
-        for ( int i = 0; i < Game.getTaille(); i++)
+        for ( int i = 0; i < Game.GetSize(); i++)
         {
             JTiles.add(new JLabel(" "));
         }
@@ -64,7 +64,6 @@ public class Draw extends AbstractDraw implements Observer{
             Jl.setHorizontalAlignment(JLabel.CENTER);
             Jl.setPreferredSize(new Dimension(80, 80));
             Jl.setBorder(BorderFactory.createLineBorder(Color.CYAN));
-            //Jl.setForeground(new Color(255, 255, 255));
             panEcran.add(Jl);
         }
 
@@ -134,20 +133,17 @@ public class Draw extends AbstractDraw implements Observer{
         Process = true;
         SwingWorker sw = new SwingWorker(){
             protected Object doInBackground() throws Exception {
-                //for(int i = 0; i < Game.MetaGame.RealTaille(); i++){
                     try {
                         setProgress(1);
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-               // }
                 return null;
             }
 
-            public void done(){
-
-                //permettre de savoir quand les mise a jour grid et score sont fini pour faire les truc en bas
+            public void done()
+            {
                 Process = false;
                 container.setFocusable(true);
                 container.requestFocus();
@@ -232,8 +228,8 @@ public class Draw extends AbstractDraw implements Observer{
         sw.execute();
     }
 
-    public void update(final boolean bol) {
-
+    public void update(final boolean bol)
+    {
         Process = true;
         SwingWorker sw = new SwingWorker(){
             protected Object doInBackground() throws Exception {
@@ -277,17 +273,16 @@ public class Draw extends AbstractDraw implements Observer{
         sw.execute();
     }
 
-    class TestLis implements ActionListener {
-        public void actionPerformed(ActionEvent e) {
-
-
+    class TestLis implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
            if ( !Game.MetaGame.Process && !Process )
            {
                Game.Init();
                oldScoreMain = 0;
                stop = false;
                status.setText(" ");
-
            }
             container.setFocusable(true);
             container.requestFocus();

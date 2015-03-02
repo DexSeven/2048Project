@@ -11,45 +11,48 @@ public class MetaGame extends AbstractMetaGame {
 
     public boolean Process = false;
     Grid Grid;
-    public int Taille = 4;
+    public int size = 4;
     Score Score;
     Save Save;
     List<Thread> Lines;
     int StatusSens = 0; // 0 Right , 1 Bottom , 2 Left and 3 Top
+    boolean firstLaunch;
 
     public MetaGame()
     {
+        firstLaunch = true;
         Score = new Score();
         Save = new Save(Score);
 
-        Init();
-
+        Init(false);
     }
 
-    public void Init()
+    public void Init(boolean restart)
     {
         Process = true;
-        Grid = new Grid(RealTaille());
+        Grid = new Grid(RealSize());
 
         Lines = new LinkedList<Thread>();
         notifyGrid();
         Process = false;
         Grid.SetNoMove(false);
 
-        Start();
+        if (restart) Start();
     }
 
     public void Start()
     {
         addTile();
         addTile();
-        if ( Save.FilesExist())
+        if ( Save.FilesExist() && firstLaunch)
         {
             Score = Save.GetSave();
             Score.setScoreMaxChanged(true);
-            Score.Reset();
-            notifyScore();
+            firstLaunch = false;
         }
+
+        Score.Reset();
+        notifyScore();
     }
 
     public void MoveTiles(int StatusSens)
@@ -61,7 +64,7 @@ public class MetaGame extends AbstractMetaGame {
 
     public void Run()
     {
-        for ( int i = 0; i < Taille; i++)
+        for ( int i = 0; i < size; i++)
         {
             Lines.add(new Thread(new Line(Score, Grid, StatusSens, i, false)));
         }
@@ -70,9 +73,9 @@ public class MetaGame extends AbstractMetaGame {
         if (Score.getScoreChanged()) notifyScore();
         if ( Grid.getNoMove())
         {
-            for ( int i2 = 0; i2 < Taille; i2++)
+            for ( int i2 = 0; i2 < size; i2++)
             {
-                for ( int i = 0; i < Taille; i++)
+                for ( int i = 0; i < size; i++)
                 {
                     if ( i2 != StatusSens)
                     {
@@ -131,6 +134,7 @@ public class MetaGame extends AbstractMetaGame {
         }
         Lines.clear();
     }
+
     public boolean LinesIsAlive()
     {
         for ( Thread t : Lines )
@@ -143,9 +147,9 @@ public class MetaGame extends AbstractMetaGame {
         return false;
     }
 
-    public int RealTaille()
+    public int RealSize()
     {
-        return Taille*Taille;
+        return size*size;
     }
 
     public void addTile()

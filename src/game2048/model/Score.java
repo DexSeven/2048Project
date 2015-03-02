@@ -22,12 +22,6 @@ public class Score implements Serializable{
         ScoreMax = 0;
     }
 
-    public Score(int ScoreMain, int ScoreMax)
-    {
-        this.ScoreMain = ScoreMain;
-        this.ScoreMax = ScoreMax;
-    }
-
     public void Reset()
     {
         ScoreMain = 0;

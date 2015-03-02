@@ -11,7 +11,7 @@ public class Grid {
     List<Tile> LineTiles;
     List<Tile> Tiles;
     List<Integer> TilesPoints;
-    int Taille;
+    int Size;
     int statsLine;
     boolean vertical;
     boolean noMove = false;
@@ -19,19 +19,19 @@ public class Grid {
     boolean win2048;
     boolean isLoose;
 
-    public Grid(int Taille)
+    public Grid(int Size)
     {
         isLoose = false;
         win2048 = false;
-        this.Taille = Taille;
+        this.Size = Size;
         Tiles = new LinkedList<Tile>();
-        for ( int i = 0; i < Taille; i++ )
+        for ( int i = 0; i < Size; i++ )
         {
-            AddTile(new Tile(i));
+            addTile(new Tile(i));
         }
     }
 
-    public void TestGrid()
+    /*public void TestGrid()
     {
         //int i = 0;
         //for ( Tile t : Tiles)
@@ -43,7 +43,7 @@ public class Grid {
             else if ( i < 12) Tiles.get(i).SetPoints(8);
             else Tiles.get(i).SetPoints(16);
         }
-    }
+    }*/
 
     public boolean IsLoose()
     {
@@ -100,15 +100,15 @@ public class Grid {
 
         if (vertical)
         {
-            iVal = statsLine * (int)Math.sqrt(Taille);
-            iCalc = (statsLine+1) *(int)Math.sqrt(Taille);
+            iVal = statsLine * (int)Math.sqrt(Size);
+            iCalc = (statsLine+1) *(int)Math.sqrt(Size);
             iInc = 1;
         }
         else
         {
             iVal = statsLine;
-            iCalc = Taille - ((int) Math.sqrt(Taille) - statsLine) + 1;
-            iInc = (int) Math.sqrt(Taille);
+            iCalc = Size - ((int) Math.sqrt(Size) - statsLine) + 1;
+            iInc = (int) Math.sqrt(Size);
         }
 
         for ( int i = iVal; i < iCalc; i = i + iInc)
@@ -127,15 +127,15 @@ public class Grid {
 
         if (vertical)
         {
-            iVal = statsLine * (int)Math.sqrt(Taille);
-            iCalc = (statsLine+1) *(int)Math.sqrt(Taille);
+            iVal = statsLine * (int)Math.sqrt(Size);
+            iCalc = (statsLine+1) *(int)Math.sqrt(Size);
             iInc = 1;
         }
         else
         {
             iVal = statsLine;
-            iCalc = Taille - ((int) Math.sqrt(Taille) - statsLine) + 1;
-            iInc = (int) Math.sqrt(Taille);
+            iCalc = Size - ((int) Math.sqrt(Size) - statsLine) + 1;
+            iInc = (int) Math.sqrt(Size);
         }
         for ( Tile t : LineTiles)
         {
@@ -165,7 +165,7 @@ public class Grid {
         TilesPoints = new LinkedList<Integer>();
     }
 
-    public void AddTile(Tile t)
+    public void addTile(Tile t)
     {
 
         Tiles.add(t);

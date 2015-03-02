@@ -1,5 +1,7 @@
 package game2048.model;
 
+import com.sun.org.apache.bcel.internal.classfile.Constant;
+
 import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
 public class Save {
 
     Score Score;
+    final String fileName = "save.uniq";
 
     public Save(Score Score)
     {
@@ -18,11 +21,11 @@ public class Save {
 
     public boolean FilesExist()
     {
-        File file = new File("save.uniq");
+        File file = new File(fileName);
         if(file.exists()) {
             try {
                 String canonicalName = file.getCanonicalFile().getName();
-                return canonicalName.equals("save.uniq");
+                return canonicalName.equals(fileName);
             } catch (final java.io.IOException e) {
                 e.printStackTrace();
                 return false;
@@ -39,8 +42,8 @@ public class Save {
         ObjectOutputStream oos = null;
 
         try {
-            final FileOutputStream fichier = new FileOutputStream("save.uniq");
-            oos = new ObjectOutputStream(fichier);
+            final FileOutputStream file = new FileOutputStream(fileName);
+            oos = new ObjectOutputStream(file);
             oos.writeObject(Score);
             oos.flush();
         } catch (final java.io.IOException e) {
@@ -62,8 +65,8 @@ public class Save {
         ObjectInputStream ois = null;
 
         try {
-            final FileInputStream fichier = new FileInputStream("save.uniq");
-            ois = new ObjectInputStream(fichier);
+            final FileInputStream file = new FileInputStream(fileName);
+            ois = new ObjectInputStream(file);
             return this.Score = (Score) ois.readObject();
         } catch (final java.io.IOException e) {
             e.printStackTrace();

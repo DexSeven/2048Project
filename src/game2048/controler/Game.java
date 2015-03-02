@@ -28,7 +28,7 @@ public class Game {
 
     public void Init()
     {
-        MetaGame.Init();
+        MetaGame.Init(true);
     }
 
     public void Move(int StatusSens)
@@ -36,9 +36,9 @@ public class Game {
         MetaGame.MoveTiles(StatusSens);
     }
 
-    public int getTaille()
+    public int GetSize()
     {
-        return MetaGame.RealTaille();
+        return MetaGame.RealSize();
     }
 
 

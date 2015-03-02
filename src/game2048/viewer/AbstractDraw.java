@@ -12,17 +12,19 @@ import java.awt.event.KeyListener;
 public class AbstractDraw extends JFrame implements KeyListener{
 
     protected Game Game;
-    boolean stop;
+    protected boolean stop;
 
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(KeyEvent e)
+    {
     }
 
 
-    public void keyPressed(KeyEvent e) {
-
+    public void keyPressed(KeyEvent e)
+    {
     }
 
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent e)
+    {
         switch (e.getKeyCode())
         {
             case KeyEvent.VK_RIGHT :
@@ -41,10 +43,6 @@ public class AbstractDraw extends JFrame implements KeyListener{
                 if (!stop )
                 Game.Move(3);
                 break;
-
         }
     }
-
-
-
 }
