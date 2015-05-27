@@ -1,4 +1,3 @@
 # 2048Project
-2048 JAVA
 
-WIP
+Petit projet : réalisation d'un 2048 en JAVA
